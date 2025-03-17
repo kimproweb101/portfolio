@@ -16,7 +16,7 @@
         </div>
         <div class="row q-pt-lg">
           <div class="col-xs-12 col-md-6 q-pa-md" data-aos="fade-right">
-            <q-img :src="portfolio.img" alt="집터" />
+            <img width="100%" :src="portfolio.img" />
           </div>
           <div class="col-xs-12 col-md-6 q-pa-md" data-aos="fade-left">
             <q-btn

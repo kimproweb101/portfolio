@@ -62,9 +62,6 @@ const rows = [
     field: '넓은 스펙트럼으로 다양한 분야의 직원분들과 의사 소통 능력이 좋습니다',
   },
 ]
-
-console.log(columns)
-console.log(rows)
 </script>
 
 <style scoped>

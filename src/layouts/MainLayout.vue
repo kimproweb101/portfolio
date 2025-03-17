@@ -7,7 +7,7 @@
         <div ref="section1">
           <AppPortfolio />
         </div>
-        <div ref="section2" class="q-mt-lg">
+        <div ref="section2">
           <AppTable />
         </div>
         <div ref="section3">

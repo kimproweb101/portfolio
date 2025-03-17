@@ -2,7 +2,7 @@
   <q-header elevated class="bg-white text-black">
     <q-toolbar class="container">
       <q-toolbar-title>
-        <a href="#body">
+        <a href="#body" @click.prevent="homeScroll">
           <q-img class="logo" src="src/assets/img/common/logo_kjw.svg" />
         </a>
       </q-toolbar-title>
@@ -54,6 +54,13 @@ import { useQuasar } from 'quasar'
 const $q = useQuasar()
 const drawer = ref(false)
 
+const homeScroll = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+
 // 부모 컴포넌트에서 제공된 ref와 상태 주입
 const { section1, section2, section3 } = inject('sectionRefs')
 const activeSection = inject('activeSection')
@@ -70,6 +77,7 @@ const toggleDrawer = () => {
 
 const scrollTo = (sectionId) => {
   const target = { section1, section2, section3 }[sectionId]?.value
+  console.log(target)
   if (target) {
     window.scrollTo({ top: target.offsetTop, behavior: 'smooth' })
     activeSection.value = sectionId // 버튼 클릭 시 activeSection 업데이트
