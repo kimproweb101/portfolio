@@ -1,0 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.logo {
+  max-width: 50px;
+}
+
+body {
+  font-family: 'NanumSquare', sans-serif;
+}
+.portfolioBgGrey {
+  background: #f4f5f7;
+}
+.j-bg-grey {
+  background: #f4f5f7;
+}

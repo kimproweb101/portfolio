@@ -1,102 +1,83 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
+  <q-layout view="hHh lpR fff">
+    <AppHeader />
     <q-page-container>
-      <router-view />
+      <q-page>
+        <AppCarousel />
+        <div ref="section1">
+          <AppPortfolio />
+        </div>
+        <div ref="section2" class="q-mt-lg">
+          <AppTable />
+        </div>
+        <div ref="section3">
+          <AppQna />
+        </div>
+      </q-page>
     </q-page-container>
+    <AppFooter />
   </q-layout>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { ref, provide, onMounted, onUnmounted } from 'vue'
+import AppHeader from './header/AppHeader.vue'
+import AppFooter from './footer/AppFooter.vue'
+import AppCarousel from 'src/components/apps/AppCarousel.vue'
+import AppPortfolio from 'src/components/apps/AppPortfolio.vue'
+import AppTable from 'src/components/apps/AppTable.vue'
+import AppQna from 'src/components/apps/AppQna.vue'
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+// 섹션 ref 정의
+const section1 = ref(null)
+const section2 = ref(null)
+const section3 = ref(null)
+
+// 자식 컴포넌트에 ref 제공
+provide('sectionRefs', { section1, section2, section3 })
+
+// 스크롤 이벤트 로직
+const activeSection = ref('')
+
+const onScroll = () => {
+  const sections = { section1, section2, section3 }
+  let foundSection = ''
+  const scrollPosition = window.scrollY + window.innerHeight / 2
+
+  for (const [id, refEl] of Object.entries(sections)) {
+    if (refEl.value) {
+      const rect = refEl.value.getBoundingClientRect()
+      const sectionTop = rect.top + window.scrollY
+      const sectionBottom = sectionTop + rect.height
+
+      // 현재 스크롤 위치가 섹션의 범위 내에 있는지 확인
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        foundSection = id
+        break
+      }
+    }
   }
-]
 
-const leftDrawerOpen = ref(false)
+  // 스크롤을 올렸을 때 menu1의 활성 상태 해제
+  if (scrollPosition < section1.value.offsetTop) {
+    foundSection = ''
+  }
 
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
+  // activeSection 업데이트
+  if (foundSection !== activeSection.value) {
+    activeSection.value = foundSection
+  }
 }
+
+// 스크롤 이벤트 등록
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
+
+// 자식 컴포넌트에 activeSection 제공
+provide('activeSection', activeSection)
 </script>
