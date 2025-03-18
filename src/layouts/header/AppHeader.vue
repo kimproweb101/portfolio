@@ -33,6 +33,10 @@
   </q-header>
 
   <q-drawer v-model="drawer" side="right" overlay behavior="mobile">
+    <div class="text-right q-py-xs">
+      <q-btn flat icon="close" @click="drawer = false" />
+    </div>
+    <q-separator />
     <q-list>
       <q-item
         v-for="(menu, index) in menus"
@@ -62,13 +66,15 @@ const homeScroll = () => {
 }
 
 // 부모 컴포넌트에서 제공된 ref와 상태 주입
-const { section1, section2, section3 } = inject('sectionRefs')
+const { section1, section2, section3, section4, section5 } = inject('sectionRefs')
 const activeSection = inject('activeSection')
 
 const menus = [
   { name: '포트폴리오', to: 'section1' },
   { name: '기술', to: 'section2' },
-  { name: '질문답변', to: 'section3' },
+  { name: '경력', to: 'section3' },
+  { name: '교육', to: 'section4' },
+  { name: '질문답변', to: 'section5' },
 ]
 
 const toggleDrawer = () => {
@@ -76,8 +82,7 @@ const toggleDrawer = () => {
 }
 
 const scrollTo = (sectionId) => {
-  const target = { section1, section2, section3 }[sectionId]?.value
-  console.log(target)
+  const target = { section1, section2, section3, section4, section5 }[sectionId]?.value
   if (target) {
     window.scrollTo({ top: target.offsetTop, behavior: 'smooth' })
     activeSection.value = sectionId // 버튼 클릭 시 activeSection 업데이트

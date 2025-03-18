@@ -1,19 +1,16 @@
 <template>
-  <div class="q-pa-md container">
-    <div class="row q-pt-xl">
+  <div class="container q-py-xl">
+    <div class="row">
       <div class="col-12">
-        <div class="text-center text-h4" data-aos="fade-right">기술</div>
-        <div class="text-center text-h5 text-primary q-pt-sm q-pb-sm" data-aos="fade-left">
-          [기술 한눈에 보기]
-        </div>
+        <AppTitle title="기술" subtitle="기술 한눈에 보기" />
+        <AppBasicTable :columns="columns" :rows="rows" />
       </div>
     </div>
-    <AppBasicTable class="tableTech" :columns="columns" :rows="rows" />
   </div>
 </template>
 <script setup>
+import AppTitle from 'src/components/apps/AppTitle.vue'
 import AppBasicTable from 'src/components/apps/AppBasicTable.vue'
-
 const columns = [
   { label: '구분', align: 'left', field: 'name' },
   { label: '설명', align: 'left', field: 'field' },
@@ -54,8 +51,7 @@ const rows = [
   },
   {
     name: '응용 기술',
-    field:
-      '회원 가입, 로그인, SNS 로그인, 로그인, 멀티 게시판, 쇼핑몰, 페이징, 무한스크롤, 결제 시스템, api연동, AWS배포, HTTPS 인증서 적용, swagger 문서 작성',
+    field: `회원 가입, 로그인, SNS 로그인, 게시판, 쇼핑몰, 페이징, 무한스크롤, 결제 시스템, api연동, AWS배포, HTTPS 인증서 적용, swagger 문서 작성`,
   },
   {
     name: '커뮤니케이션',

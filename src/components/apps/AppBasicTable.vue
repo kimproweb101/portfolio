@@ -1,16 +1,27 @@
 <template>
-  <table class="j-table">
-    <thead>
-      <tr>
-        <th v-for="(column, index) in columns" :key="index">{{ column.label }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(row, index) in rows" :key="index">
-        <td v-for="(column, index) in columns" :key="index">{{ row[column.field] }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="overflow-auto">
+    <table class="j-table">
+      <thead>
+        <tr>
+          <th
+            :style="{ width: column.width ? column.width : '' }"
+            v-for="(column, index) in columns"
+            :key="index"
+          >
+            {{ column.label }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(row, index) in rows" :key="index">
+          <td v-for="(column, index) in columns" :key="index">
+            <div v-if="column.html" v-html="formattedText(row[column.field])"></div>
+            <div v-else>{{ row[column.field] }}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script setup>
@@ -24,6 +35,9 @@ defineProps({
     default: () => [],
   },
 })
+const formattedText = (value) => {
+  return value.replace(/,/g, '<br>')
+}
 </script>
 
 <style scoped>
@@ -36,8 +50,5 @@ defineProps({
   text-align: left;
   border: 1px solid #ccc;
   padding: 20px;
-}
-.j-table td:nth-child(1) {
-  width: 130px;
 }
 </style>

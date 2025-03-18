@@ -5,12 +5,18 @@
       <q-page>
         <AppCarousel />
         <div ref="section1">
-          <AppPortfolio />
+          <AppPortfolio ref="section1" />
         </div>
         <div ref="section2">
-          <AppTable />
+          <AppTech />
         </div>
         <div ref="section3">
+          <AppCareer />
+        </div>
+        <div ref="section4">
+          <AppEdu />
+        </div>
+        <div ref="section5">
           <AppQna />
         </div>
       </q-page>
@@ -25,22 +31,26 @@ import AppHeader from './header/AppHeader.vue'
 import AppFooter from './footer/AppFooter.vue'
 import AppCarousel from 'src/components/apps/AppCarousel.vue'
 import AppPortfolio from 'src/components/apps/AppPortfolio.vue'
-import AppTable from 'src/components/apps/AppTable.vue'
+import AppTech from 'src/components/apps/AppTech.vue'
 import AppQna from 'src/components/apps/AppQna.vue'
+import AppCareer from 'src/components/apps/AppCareer.vue'
+import AppEdu from 'src/components/apps/AppEdu.vue'
 
 // 섹션 ref 정의
 const section1 = ref(null)
 const section2 = ref(null)
 const section3 = ref(null)
+const section4 = ref(null)
+const section5 = ref(null)
 
 // 자식 컴포넌트에 ref 제공
-provide('sectionRefs', { section1, section2, section3 })
+provide('sectionRefs', { section1, section2, section3, section4, section5 })
 
 // 스크롤 이벤트 로직
 const activeSection = ref('')
 
 const onScroll = () => {
-  const sections = { section1, section2, section3 }
+  const sections = { section1, section2, section3, section4, section5 }
   let foundSection = ''
   const scrollPosition = window.scrollY + window.innerHeight / 2
 

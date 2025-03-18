@@ -3,22 +3,20 @@
     <div
       v-for="(portfolio, index) in portfolios"
       :key="portfolio.id"
+      class="q-py-xl"
       :class="{ portfolioBgGrey: index % 2 !== 0 }"
     >
       <div class="container">
-        <div class="row q-pt-xl">
+        <div class="row">
           <div class="col-12">
-            <div class="text-center text-h4" data-aos="fade-right">{{ portfolio.title }}</div>
-            <div class="text-center text-h5 text-primary q-pt-sm" data-aos="fade-left">
-              [{{ portfolio.subtitle }}]
-            </div>
+            <AppTitle :title="portfolio.title" :subtitle="portfolio.subtitle" />
           </div>
         </div>
         <div class="row q-pt-lg">
-          <div class="col-xs-12 col-md-6 q-pa-md" data-aos="fade-right">
+          <div class="col-xs-12 col-md-6 q-pa-md" data-aos="flip-right">
             <img width="100%" :src="portfolio.img" />
           </div>
-          <div class="col-xs-12 col-md-6 q-pa-md" data-aos="fade-left">
+          <div class="col-xs-12 col-md-6 q-pa-md" data-aos="flip-left">
             <q-btn
               label="자세히 보기"
               @click="doDialog(portfolio.tabs)"
@@ -44,6 +42,7 @@
 <script setup>
 import { ref } from 'vue'
 import AppPortfolioDialog from 'src/components/apps/AppPortfolioDialog.vue'
+import AppTitle from './AppTitle.vue'
 const dialog = ref(false)
 const tabs = ref()
 const doDialog = (_tabs) => {
@@ -232,8 +231,8 @@ const portfolios = [
         name: 'tab1',
         label: '마라톤 대회',
         type: 'img',
-        src: 'src/assets/img/portfolio/list/portfolio_mara.png',
-        desc: '교육 기관에서 수료 후 처음으로 작업 한 사이트로, 사이트를 통해 2500여명의 접수를 받았고, 대회가 잘 마무리 되었습니다.',
+        src: 'https://www.chungnamilbo.com/news/photo/201404/288792_538_2231.jpg',
+        desc: '교육 기관에서 수료 후 처음으로 작업 한 사이트로, 사이트를 통해 2500여명의 접수를 받았고, 접수받는 중 오류가 1건도 발생하지 않았고, 대회가 잘 마무리 되었습니다.',
       },
     ],
   },
