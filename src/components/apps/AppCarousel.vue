@@ -50,8 +50,6 @@ export default {
   setup() {
     return {
       slide: ref('style'),
-      lorem:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
     }
   },
 }
@@ -61,7 +59,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url('src/assets/img/sliders/slider01_bg.png') no-repeat center bottom;
+  background: url('/img/sliders/slider01_bg.png') no-repeat center bottom;
   background-size: cover;
 }
 .carousel {
@@ -73,7 +71,7 @@ export default {
   left: 0;
   width: 100%;
   height: 800px;
-  background: url('src/assets/img/sliders/slider01_ok.png') no-repeat center bottom;
+  background: url('/img/sliders/slider01_ok.png') no-repeat center bottom;
   background-size: contain;
 }
 .slider01OkBg {

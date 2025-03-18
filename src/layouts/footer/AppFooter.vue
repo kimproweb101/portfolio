@@ -1,9 +1,7 @@
 <template>
   <q-footer elevated class="bg-dark text-white">
     <q-toolbar>
-      <q-img class="logo" src="src/assets/img/common/footer-logo.png" alt="Logo" />
-
-      <!-- 가운데 카피라이트 -->
+      <q-img class="logo" src="/img/common/footer-logo.png" alt="Logo" />
       <q-toolbar-title class="text-body2 text-center">
         COPYRIGHT © KJW. All Rights Reserved.
       </q-toolbar-title>

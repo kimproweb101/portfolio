@@ -54,7 +54,7 @@ const portfolios = [
   {
     id: 1,
     title: '집터',
-    img: 'src/assets/img/portfolio/list/portfolio_zipter.png',
+    img: '/img/portfolio/list/portfolio_zipter.png',
     subtitle: '건설자재 중개 플랫폼',
     desc: [
       '프로젝트 개요 : 가설자재 중개 시스템',
@@ -69,7 +69,7 @@ const portfolios = [
         name: 'tab1',
         label: '메인',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/zipterMain.jpg',
+        src: '/img/portfolio/detail/zipterMain.jpg',
         desc: '메인 화면',
       },
       {
@@ -77,7 +77,7 @@ const portfolios = [
         name: 'tab2',
         label: '지도',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/zipterMap.jpg',
+        src: '/img/portfolio/detail/zipterMap.jpg',
         desc: '다음 지도 api를 연동하여, 건설사 및 가설업체 지도페이지를 작성 했습니다.',
       },
       {
@@ -85,7 +85,7 @@ const portfolios = [
         name: 'tab3',
         label: '주문1',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/zipterOrder01.png',
+        src: '/img/portfolio/detail/zipterOrder01.png',
         desc: '가설자재 임대 주문 페이지를 작성 했습니다.',
       },
       {
@@ -93,7 +93,7 @@ const portfolios = [
         name: 'tab4',
         label: '주문2',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/zipterOrder02.png',
+        src: '/img/portfolio/detail/zipterOrder02.png',
         desc: '가설자재 구매 주문 페이지를 작성 했습니다.',
       },
       {
@@ -101,7 +101,7 @@ const portfolios = [
         name: 'tab5',
         label: '관리자',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/zipterAdmProject.png',
+        src: '/img/portfolio/detail/zipterAdmProject.png',
         desc: `관리자 페이지는 건설사 관리자, 유통사 관리자, 본사 관리자로 구성 되어있으며,
               프로젝트 관리, 공사현장 관리, 임대주문, 구매주문이 가능하도록 개발 했습니다.`,
       },
@@ -110,7 +110,7 @@ const portfolios = [
   {
     id: 2,
     title: '비스트로앤 밀키트',
-    img: 'src/assets/img/portfolio/list/portfolio_bistroand.png',
+    img: '/img/portfolio/list/portfolio_bistroand.png',
     subtitle: '쇼핑몰 시스템 구축',
     desc: [
       '전체 작업 100%',
@@ -125,7 +125,7 @@ const portfolios = [
         name: 'tab1',
         label: '감바스',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/bistroandG.jpg',
+        src: '/img/portfolio/detail/bistroandG.jpg',
         desc: '감바스',
       },
       {
@@ -133,7 +133,7 @@ const portfolios = [
         name: 'tab2',
         label: '오징어 먹물 리조또',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/bistroandO.jpg',
+        src: '/img/portfolio/detail/bistroandO.jpg',
         desc: '오징어 먹물 리조또',
       },
       {
@@ -141,7 +141,7 @@ const portfolios = [
         name: 'tab3',
         label: '로제 파스타 밀키트',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/bistroandR.jpg',
+        src: '/img/portfolio/detail/bistroandR.jpg',
         desc: '로제 파스타 밀키트',
       },
     ],
@@ -149,7 +149,7 @@ const portfolios = [
   {
     id: 3,
     title: '스쿨로직',
-    img: 'src/assets/img/portfolio/list/portfolio_skoologic.png',
+    img: '/img/portfolio/list/portfolio_skoologic.png',
     subtitle: '입시 플랫폼',
     desc: [
       '참여율 : 프론트 엔드(100%), 백엔드 개발(100%)',
@@ -191,7 +191,7 @@ const portfolios = [
   {
     id: 3,
     title: '포스시스템',
-    img: 'src/assets/img/portfolio/list/portfolio_pos.png',
+    img: '/img/portfolio/list/portfolio_pos.png',
     subtitle: '기업 맞춤형 포스 시스템 개발',
     desc: [
       '참여율 : 프론트 엔드(100%), 백엔드 개발(100%)',
@@ -218,7 +218,7 @@ const portfolios = [
   {
     id: 5,
     title: '마라톤',
-    img: 'src/assets/img/portfolio/list/portfolio_mara.png',
+    img: '/img/portfolio/list/portfolio_mara.png',
     subtitle: '한마음 통일 마라톤 대회 사이트 개발',
     desc: [
       '참여율 : 전체 작업(100%)',
@@ -239,7 +239,7 @@ const portfolios = [
   {
     id: 6,
     title: '이러닝',
-    img: 'src/assets/img/portfolio/list/portfolio_elearning.png',
+    img: '/img/portfolio/list/portfolio_elearning.png',
     subtitle: '대학교 이러닝 시스템 개발',
     desc: [
       '참여율 : LMS 솔루션을 대학별로 커스터 마이징 하여 공급',
@@ -251,7 +251,7 @@ const portfolios = [
         name: 'tab1',
         label: '이러닝 시스템',
         type: 'img',
-        src: 'src/assets/img/portfolio/detail/elearningView.png',
+        src: '/img/portfolio/detail/elearningView.png',
         desc: '이러닝 시스템',
       },
     ],
