@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <AppTitle title="기술" subtitle="기술 한눈에 보기" />
-        <AppBasicTable :columns="columns" :rows="rows" />
+        <AppBasicTable :columns="columns" :rows="rows" class="text-body1" />
       </div>
     </div>
   </div>
@@ -12,7 +12,7 @@
 import AppTitle from 'src/components/apps/AppTitle.vue'
 import AppBasicTable from 'src/components/apps/AppBasicTable.vue'
 const columns = [
-  { label: '구분', align: 'left', field: 'name' },
+  { label: '구분', align: 'left', field: 'name', width: '140px' },
   { label: '설명', align: 'left', field: 'field' },
 ]
 
@@ -63,8 +63,5 @@ const rows = [
 <style scoped>
 .container {
   max-width: 800px;
-}
-.tableTech {
-  font-size: 15px;
 }
 </style>

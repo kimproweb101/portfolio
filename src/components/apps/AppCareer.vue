@@ -1,10 +1,10 @@
 <template>
-  <div class="j-bg-grey q-pa-lg">
+  <div class="j-bg-grey">
     <div class="container q-py-xl">
       <div class="row">
         <div class="col-12">
           <AppTitle title="경력" subtitle="경력 사항" />
-          <AppBasicTable :columns="columns" :rows="rows" />
+          <AppBasicTable :columns="columns" :rows="rows" class="text-body1" />
         </div>
       </div>
     </div>
@@ -13,25 +13,10 @@
 <script setup>
 import AppTitle from 'src/components/apps/AppTitle.vue'
 import AppBasicTable from 'src/components/apps/AppBasicTable.vue'
-
-// 2022.05 ~ 2024.12 인필링
-// 집터(가설자재 중계 플랫폼)
-
-// 2018.10 ~ 2021.03 나우홀딩스
-// 스쿨로직 개발(입시 플랫폼)
-
-// 2014.05 ~ 2017.06 힐링인터네셔널
-// 포스 시스템 개발(본사, 대리점, 소비자 통합)
-
-// 2012.01 ~ 2012.07 한국교육 정보원
-// e-러닝 개발(한남대, 중부대, 우송대)
-// 대전 이그잼 고시학원 사이트 제작
-// 대전 민족 부사관 장교학원 사이트 제작
-
 const columns = [
-  { label: '기간', align: 'left', field: 'period' },
-  { label: '합계', align: 'left', field: 'sum' },
-  { label: '기업', align: 'left', field: 'company' },
+  { label: '기간', align: 'left', field: 'period', width: '120px' },
+  { label: '합계', align: 'left', field: 'sum', width: '120px' },
+  { label: '기업', align: 'left', field: 'company', width: '120px' },
   { label: '상세', align: 'left', field: 'detail', html: true },
 ]
 
@@ -45,7 +30,7 @@ const rows = [
   {
     period: '2018.10 ~ 2021.03',
     sum: '2년 6개월',
-    company: '투비유니콘 & 나우홀딩스',
+    company: '투비유니콘',
     detail: `스쿨로직 포털 사이트 홈페이지, 투비유니콘 홈페이지, 도르 사회적 기업 홈페이지, 지원사업 스텔라 에그 홈페이지, 대치 유니업 학원 홈페이지`,
   },
   {

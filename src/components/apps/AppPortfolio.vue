@@ -26,7 +26,11 @@
             />
             <div class="text-h6">
               <ul>
-                <li class="text-grey-8" v-for="(item, index) in portfolio.desc" :key="index">
+                <li
+                  class="text-grey-8 text-body1"
+                  v-for="(item, index) in portfolio.desc"
+                  :key="index"
+                >
                   {{ item }}
                 </li>
               </ul>
