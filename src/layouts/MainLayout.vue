@@ -16,9 +16,9 @@
         <div ref="section4">
           <AppEdu />
         </div>
-        <div ref="section5">
+        <!-- <div ref="section5">
           <AppQna />
-        </div>
+        </div> -->
       </q-page>
     </q-page-container>
     <AppFooter />
@@ -32,7 +32,7 @@ import AppFooter from './footer/AppFooter.vue'
 import AppCarousel from 'src/components/apps/AppCarousel.vue'
 import AppPortfolio from 'src/components/apps/AppPortfolio.vue'
 import AppTech from 'src/components/apps/AppTech.vue'
-import AppQna from 'src/components/apps/AppQna.vue'
+// import AppQna from 'src/components/apps/AppQna.vue'
 import AppCareer from 'src/components/apps/AppCareer.vue'
 import AppEdu from 'src/components/apps/AppEdu.vue'
 

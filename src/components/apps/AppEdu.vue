@@ -74,7 +74,7 @@ const rows2 = [
   },
   {
     category: 'nodejs',
-    list: '생활코딩 nodejs, nodejs 교과서, 코드캠프 백앤드',
+    list: 'nodejs 교과서, 코드캠프 백앤드',
   },
   {
     category: 'php',

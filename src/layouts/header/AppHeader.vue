@@ -74,7 +74,6 @@ const menus = [
   { name: '기술', to: 'section2' },
   { name: '경력', to: 'section3' },
   { name: '교육', to: 'section4' },
-  { name: '질문답변', to: 'section5' },
 ]
 
 const toggleDrawer = () => {

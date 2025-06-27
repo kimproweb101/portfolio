@@ -27,7 +27,7 @@ const rows = [
   },
   {
     name: '프론트엔드',
-    field: 'vuejs, nuxt, vuetify, quasar',
+    field: 'vue.js, nuxt, vuetify, quasar',
   },
   {
     name: '백엔드',
