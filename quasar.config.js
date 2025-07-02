@@ -43,8 +43,7 @@ export default defineConfig((/* ctx */) => {
       // vueOptionsAPI: false,
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
-
-      // publicPath: '/',
+      publicPath: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
       // analyze: true,
       // env: {},
       // rawDefine: {}

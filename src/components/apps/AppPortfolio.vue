@@ -17,13 +17,40 @@
             <img width="100%" :src="portfolio.img" />
           </div>
           <div class="col-xs-12 col-md-6 q-pa-md" data-aos="flip-left">
-            <q-btn
-              label="자세히 보기"
-              @click="doDialog(portfolio.tabs)"
-              size="lg"
-              color="primary"
-              class="full-width"
-            />
+            <template v-if="portfolio.link">
+              <div class="row q-gutter-x-md">
+                <div class="col">
+                  <q-btn
+                    label="자세히 보기"
+                    @click="doDialog(portfolio.tabs)"
+                    size="lg"
+                    color="primary"
+                    class="full-width"
+                  />
+                </div>
+                <div class="col">
+                  <q-btn
+                    v-if="portfolio.link"
+                    label="바로가기"
+                    :href="portfolio.link"
+                    target="_blank"
+                    size="lg"
+                    color="secondary"
+                    class="full-width"
+                  />
+                </div>
+              </div>
+            </template>
+            <template v-else>
+              <q-btn
+                label="자세히 보기"
+                @click="doDialog(portfolio.tabs)"
+                size="lg"
+                color="primary"
+                class="full-width"
+              />
+            </template>
+
             <div class="text-h6">
               <ul>
                 <li
@@ -58,7 +85,7 @@ const portfolios = [
   {
     id: 1,
     title: '집터',
-    img: '/img/portfolio/list/portfolio_zipter.png',
+    img: './img/portfolio/list/portfolio_zipter.png',
     subtitle: '건설자재 중개 플랫폼',
     desc: [
       '프로젝트 개요 : 가설자재 중개 시스템',
@@ -67,13 +94,14 @@ const portfolios = [
       '전체 시스템 개발',
       '사용 기술 : vue nuxt, vuetify, nodejs express, mysql, aws',
     ],
+    link: null,
     tabs: [
       {
         tabid: 1,
         name: 'tab1',
         label: '메인',
         type: 'img',
-        src: '/img/portfolio/detail/zipterMain.jpg',
+        src: './img/portfolio/detail/zipterMain.jpg',
         desc: '메인 화면',
       },
       {
@@ -81,7 +109,7 @@ const portfolios = [
         name: 'tab2',
         label: '지도',
         type: 'img',
-        src: '/img/portfolio/detail/zipterMap.jpg',
+        src: './img/portfolio/detail/zipterMap.jpg',
         desc: '다음 지도 api를 연동하여, 건설사 및 가설업체 지도페이지를 작성 했습니다.',
       },
       {
@@ -89,7 +117,7 @@ const portfolios = [
         name: 'tab3',
         label: '주문1',
         type: 'img',
-        src: '/img/portfolio/detail/zipterOrder01.png',
+        src: './img/portfolio/detail/zipterOrder01.png',
         desc: '가설자재 임대 주문 페이지를 작성 했습니다.',
       },
       {
@@ -97,7 +125,7 @@ const portfolios = [
         name: 'tab4',
         label: '주문2',
         type: 'img',
-        src: '/img/portfolio/detail/zipterOrder02.png',
+        src: './img/portfolio/detail/zipterOrder02.png',
         desc: '가설자재 구매 주문 페이지를 작성 했습니다.',
       },
       {
@@ -105,7 +133,7 @@ const portfolios = [
         name: 'tab5',
         label: '관리자',
         type: 'img',
-        src: '/img/portfolio/detail/zipterAdmProject.png',
+        src: './img/portfolio/detail/zipterAdmProject.png',
         desc: `관리자 페이지는 건설사 관리자, 유통사 관리자, 본사 관리자로 구성 되어있으며,
               프로젝트 관리, 공사현장 관리, 임대주문, 구매주문이 가능하도록 개발 했습니다.`,
       },
@@ -114,25 +142,26 @@ const portfolios = [
   {
     id: 2,
     title: '비스트로앤 밀키트',
-    img: '/img/portfolio/list/portfolio_bistroand.png',
+    img: './img/portfolio/list/portfolio_bistroand.png',
     subtitle: '쇼핑몰 시스템 구축',
     desc: [
-      '상세페이지 제외한 모든 업무 진행',
       '클라이언트 상담 및 견적 & 제안',
-      '멀티 마켓 설정 (쿠팡, 네이버 스마트 스토어, 옥션, 지마켓)',
-      'SNS 로그인설정(카카오, 네이버)',
-      '자사몰 결제시스템, 네이버 결제 시스템',
+      '멀티 마켓 일괄 관리 지원 (쿠팡, 네이버 스마트 스토어, 옥션, 지마켓)',
+      'CJ 대한통운 택배 연동',
+      'SNS 로그인(카카오, 네이버)',
+      '자사몰 결제, 네이버 페이 연동',
       '쇼핑몰 관리방법 교육',
       'pc버전, 모바일 버전 퍼블리싱',
-      '상세페이지 : 요구사항 정의 및 디자이너에게 전달',
+      '상세페이지 : 요구사항 정의 후 디자이너에게 전달',
     ],
+    link: 'https://bistro-and.com',
     tabs: [
       {
         tabid: 1,
         name: 'tab1',
         label: '메인',
         type: 'img',
-        src: '/img/portfolio/detail/bistroandMain.jpg',
+        src: './img/portfolio/detail/bistroandMain.jpg',
         desc: '메인',
       },
       {
@@ -140,7 +169,7 @@ const portfolios = [
         name: 'tab2',
         label: '상품 리스트',
         type: 'img',
-        src: '/img/portfolio/detail/bistroandList.jpg',
+        src: './img/portfolio/detail/bistroandList.jpg',
         desc: '상품 리스트',
       },
       {
@@ -148,7 +177,7 @@ const portfolios = [
         name: 'tab3',
         label: '상세페이지',
         type: 'img',
-        src: '/img/portfolio/detail/bistroandDetail.jpg',
+        src: './img/portfolio/detail/bistroandDetail.jpg',
         desc: '상세페이지',
       },
     ],
@@ -156,7 +185,7 @@ const portfolios = [
   {
     id: 3,
     title: '스쿨로직',
-    img: '/img/portfolio/list/portfolio_skoologic.png',
+    img: './img/portfolio/list/portfolio_skoologic.png',
     subtitle: '입시 플랫폼',
     desc: [
       '참여율 : 프론트 엔드(100%), 백엔드 개발(100%)',
@@ -168,6 +197,7 @@ const portfolios = [
       '컨텐츠 판매 시스템 구축',
       '전국 다수의 학교에서 사용 중',
     ],
+    link: 'https://skoologic.com',
     tabs: [
       {
         tabid: 1,
@@ -198,7 +228,7 @@ const portfolios = [
   {
     id: 3,
     title: '포스시스템',
-    img: '/img/portfolio/list/portfolio_pos.png',
+    img: './img/portfolio/list/portfolio_pos.png',
     subtitle: '기업 맞춤형 포스 시스템 개발',
     desc: [
       '참여율 : 프론트 엔드(100%), 백엔드 개발(100%)',
@@ -211,6 +241,7 @@ const portfolios = [
       '페이지 새로 고침 없이 동작 되도록 설계',
       '상품별로 할인을 별도로 설정 할 수 있음',
     ],
+    link: null,
     tabs: [
       {
         tabid: 1,
@@ -225,13 +256,14 @@ const portfolios = [
   {
     id: 5,
     title: '마라톤',
-    img: '/img/portfolio/list/portfolio_mara.png',
+    img: './img/portfolio/list/portfolio_mara.png',
     subtitle: '한마음 통일 마라톤 대회 사이트 개발',
     desc: [
       '참여율 : 전체 작업(100%)',
       '마라톤대회 개인, 단체 신청 및 수정 기능 제공',
       '관리자 페이지 개발',
     ],
+    link: null,
     tabs: [
       {
         tabid: 1,
@@ -246,7 +278,7 @@ const portfolios = [
   {
     id: 6,
     title: '이러닝',
-    img: '/img/portfolio/list/portfolio_elearning.png',
+    img: './img/portfolio/list/portfolio_elearning.png',
     subtitle: '대학교 이러닝 시스템 개발',
     desc: [
       '참여율 : LMS 솔루션을 대학별로 커스터 마이징 하여 공급',
@@ -258,7 +290,7 @@ const portfolios = [
         name: 'tab1',
         label: '이러닝 시스템',
         type: 'img',
-        src: '/img/portfolio/detail/elearningView.png',
+        src: './img/portfolio/detail/elearningView.png',
         desc: '이러닝 시스템',
       },
     ],

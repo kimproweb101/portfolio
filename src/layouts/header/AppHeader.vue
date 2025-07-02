@@ -3,7 +3,7 @@
     <q-toolbar class="container">
       <q-toolbar-title>
         <a href="#body" @click.prevent="homeScroll">
-          <q-img class="logo" src="/img/common/logo_kjw.svg" />
+          <img class="logo" src="img/common/logo_kjw.svg" />
         </a>
       </q-toolbar-title>
       <q-space />
