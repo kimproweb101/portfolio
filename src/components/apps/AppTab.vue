@@ -23,6 +23,10 @@
             <template v-else-if="tab.type === 'youtube'">
               <q-video :ratio="16 / 9" :src="`https://www.youtube.com/embed/${tab.src}?rel=0`" />
             </template>
+            <template v-else-if="tab.type === 'webm'">
+              <q-video :ratio="16 / 9" :src="`${tab.src}`" />
+            </template>
+
             <template v-else> 컨텐츠가 없습니다. </template>
           </q-tab-panel>
         </q-tab-panels>

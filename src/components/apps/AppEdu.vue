@@ -70,11 +70,11 @@ const columns2 = [
 const rows2 = [
   {
     category: 'vue',
-    list: '장기효 로드맵, 짐코딩 로드맵, 개발자의 품격 로드맵, vue nodebird',
+    list: '인프런 vue.js 수업 대부분 수강',
   },
   {
     category: 'nodejs',
-    list: 'nodejs 교과서, 코드캠프 백앤드',
+    list: '인프런, 패스트캠퍼스에서 express NestJs',
   },
   {
     category: 'php',

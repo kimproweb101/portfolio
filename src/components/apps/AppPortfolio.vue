@@ -2,9 +2,9 @@
   <div>
     <div
       v-for="(portfolio, index) in portfolios"
-      :key="portfolio.id"
+      :key="index"
       class="q-py-xl"
-      :class="{ portfolioBgGrey: index % 2 !== 0 }"
+      :class="{ portfolioBgGrey: index % 2 === 0 }"
     >
       <div class="container">
         <div class="row">
@@ -83,7 +83,6 @@ const doDialog = (_tabs) => {
 
 const portfolios = [
   {
-    id: 1,
     title: '집터',
     img: './img/portfolio/list/portfolio_zipter.png',
     subtitle: '건설자재 중개 플랫폼',
@@ -140,7 +139,6 @@ const portfolios = [
     ],
   },
   {
-    id: 2,
     title: '비스트로앤 밀키트',
     img: './img/portfolio/list/portfolio_bistroand.png',
     subtitle: '쇼핑몰 시스템 구축',
@@ -183,7 +181,6 @@ const portfolios = [
     ],
   },
   {
-    id: 3,
     title: '스쿨로직',
     img: './img/portfolio/list/portfolio_skoologic.png',
     subtitle: '입시 플랫폼',
@@ -226,7 +223,30 @@ const portfolios = [
     ],
   },
   {
-    id: 3,
+    title: '아메리퀴드',
+    img: './img/portfolio/list/portfolio_ameliquid.png',
+    subtitle: '전자담배 프랜차이즈 홈페이지 ',
+    desc: [
+      '참여율 : 전체(100%)',
+      '내용 기획, 디자인, 개발등 모든 작업 진행',
+      '디자인 담당자 분이 자주 바껴서, 디자이너 공백시, 액상병 라벨 디자인, 패키지 디자인도 담당',
+      '직원수 : 입사 직후 5명-> 30명까지(6개월)',
+      '대리점 및 취급점: 0 -> 200개(12개월)',
+      '연초 담배값이 2배로 인상됐던 시기에, 전자담배 붐이 일어나면서 급속 성장',
+    ],
+    link: null,
+    tabs: [
+      {
+        tabid: 1,
+        name: 'tab1',
+        label: '상세페이지',
+        type: 'webm',
+        src: '/movie/ameliquid.webm',
+        desc: '상세 페이지 입니다.',
+      },
+    ],
+  },
+  {
     title: '포스시스템',
     img: './img/portfolio/list/portfolio_pos.png',
     subtitle: '기업 맞춤형 포스 시스템 개발',
@@ -251,10 +271,41 @@ const portfolios = [
         src: 'nkQ4tWMNKus',
         desc: '포스시스템',
       },
+      {
+        tabid: 2,
+        name: 'tab2',
+        label: '주문서 작성',
+        type: 'img',
+        src: './img/portfolio/detail/pos_order01.png',
+        desc: '주문1.',
+      },
+      {
+        tabid: 3,
+        name: 'tab3',
+        label: '장바구니 리스트',
+        type: 'img',
+        src: './img/portfolio/detail/pos_order02.png',
+        desc: '주문2.',
+      },
+      {
+        tabid: 4,
+        name: 'tab4',
+        label: '주문서 확인',
+        type: 'img',
+        src: './img/portfolio/detail/pos_order03.png',
+        desc: '주문3',
+      },
+      {
+        tabid: 5,
+        name: 'tab5',
+        label: '주문 리스트',
+        type: 'img',
+        src: './img/portfolio/detail/pos_order04.png',
+        desc: '주문 리스트',
+      },
     ],
   },
   {
-    id: 5,
     title: '마라톤',
     img: './img/portfolio/list/portfolio_mara.png',
     subtitle: '한마음 통일 마라톤 대회 사이트 개발',
@@ -268,22 +319,26 @@ const portfolios = [
       {
         tabid: 1,
         name: 'tab1',
+        label: '상세페이지',
+        type: 'webm',
+        src: '/movie/dj.webm',
+        desc: '상세페이지',
+      },
+      {
+        tabid: 2,
+        name: 'tab2',
         label: '마라톤 대회',
         type: 'img',
         src: 'https://www.chungnamilbo.com/news/photo/201404/288792_538_2231.jpg',
-        desc: '교육 기관에서 수료 후 처음으로 작업 한 사이트로, 사이트를 통해 2500여명의 접수를 받았고, 접수받는 중 오류가 1건도 발생하지 않았고, 대회가 잘 마무리 되었습니다.',
+        desc: '사이트를 통해 2500여명의 접수를 받았고, 대회가 잘 마무리 되었습니다.',
       },
     ],
   },
   {
-    id: 6,
     title: '이러닝',
     img: './img/portfolio/list/portfolio_elearning.png',
     subtitle: '대학교 이러닝 시스템 개발',
-    desc: [
-      '참여율 : LMS 솔루션을 대학별로 커스터 마이징 하여 공급',
-      '우송대, 중부대, 한남대에 이러닝 시스템 공급',
-    ],
+    desc: ['LMS 솔루션을 커스터 마이징', '우송대, 중부대, 한남대에 이러닝 시스템 공급'],
     tabs: [
       {
         tabid: 1,
@@ -296,6 +351,8 @@ const portfolios = [
     ],
   },
 ]
+
+portfolios.reverse()
 </script>
 <style lang="scss" scoped>
 ul,

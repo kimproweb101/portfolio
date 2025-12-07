@@ -26,12 +26,16 @@ const rows = [
     field: 'html5, css2, css3, javascript, jquery, bootstrap, responsive web',
   },
   {
-    name: '프론트엔드',
+    name: '프론트엔드(vue)',
     field: 'vue.js, nuxt, vuetify, quasar',
   },
   {
+    name: '프론트엔드(react)',
+    field: 'react, next, tailwindcss, shadcn ui',
+  },
+  {
     name: '백엔드',
-    field: 'nodejs express, mysql, php, firebase',
+    field: 'NodeJs express, NodeJs NestJs, mysql, php, firebase',
   },
   {
     name: '인프라',
