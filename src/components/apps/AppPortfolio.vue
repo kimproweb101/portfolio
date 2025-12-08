@@ -241,7 +241,7 @@ const portfolios = [
         name: 'tab1',
         label: '상세페이지',
         type: 'webm',
-        src: '/movie/ameliquid.webm',
+        src: './movie/ameliquid.webm',
         desc: '상세 페이지 입니다.',
       },
     ],
@@ -321,7 +321,7 @@ const portfolios = [
         name: 'tab1',
         label: '상세페이지',
         type: 'webm',
-        src: '/movie/dj.webm',
+        src: './movie/dj.webm',
         desc: '상세페이지',
       },
       {
